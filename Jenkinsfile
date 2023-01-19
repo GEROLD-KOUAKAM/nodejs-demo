@@ -4,7 +4,7 @@
             DOCKERHUB_CREDENTIALS = credentials('dockerhub')
         }
         stages {
-            stage('Build docker image') {
+            stage('Build docker images') {
                 steps {
                     sh 'docker build -t geroldsiewe/nodeapp:$BUILD_NUMBER .'
                 }
