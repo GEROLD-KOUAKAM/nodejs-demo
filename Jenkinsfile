@@ -14,7 +14,7 @@
                     sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 }
             }
-            stage('push image') {
+            stage('push image to dockerhub') {
                 steps{
                     sh 'docker push geroldsiewe/nodeapp:$BUILD_NUMBER'
                 }
