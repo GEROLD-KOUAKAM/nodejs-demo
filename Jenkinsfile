@@ -1,7 +1,7 @@
     pipeline {
         agent any
         environment {
-            //DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+            //DOCKERHUB_CREDENTIALS = credentials('dockerhub') //
              AWS_ACCOUNT_ID="117166837117"
              AWS_DEFAULT_REGION="us-east-1"
              IMAGE_REPO_NAME="app-jenkins"
@@ -14,13 +14,11 @@
                     sh 'docker build -t $IMAGE_REPO_NAME/$IMAGE_TAG:$BUILD_NUMBER .'
                 }
             }
-
               stage('Logging into AWS ECR') {
             steps {
                 script {
                 sh """aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"""
                 }
-                 
             }
         }
 
