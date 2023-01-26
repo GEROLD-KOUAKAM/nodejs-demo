@@ -38,13 +38,23 @@
                      //sh 'docker push $IMAGE_REPO_NAME/$IMAGE_TAG:$BUILD_NUMBER'
                 }
             }
+            
+             
+            stage('deploy k8s') {
+                steps{
+                     sh 'envsubst < nodeapp/deploymentservice.yml | kubectl apply -f -'
+                }
+            }
+            
+          ////////////////////////////  test  ////////////////////////////////////////
             /*
             stage('push image to dockerhub') {
                 steps{
                     sh 'docker push geroldsiewe/nodeapp:$BUILD_NUMBER'
                 }
             }*/
-
+         //////////////////////////  test  ///////////////////////////////////////
+   
 
         }
         /*
