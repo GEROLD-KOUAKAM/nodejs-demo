@@ -42,7 +42,9 @@
              
             stage('deploy k8s') {
                 steps{
-                     sh 'envsubst < nodeapp/deploymentservice.yml | kubectl apply -f -'
+                     //sh 'envsubst < nodeapp/deploymentservice.yml | kubectl apply -f -'
+                    
+                    sh "kubectl apply -f ./nodeapp/deploymentservice.yml --kubeconfig=/home/ec2-user/.kube/config"
                 }
             }
             
