@@ -43,7 +43,7 @@
             stage('deploy k8s') {
                 steps{
                      //sh 'envsubst < nodeapp/deploymentservice.yml | kubectl apply -f -'
-                    
+                    sh "chmod +x /home/ec2-user/.kube/config"
                     sh "kubectl apply -f ./nodeapp/deploymentservice.yml --kubeconfig=/home/ec2-user/.kube/config"
                 }
             }
