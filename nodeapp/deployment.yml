@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: thetips4you/nodeapp:latest
+        image: 117166837117.dkr.ecr.us-east-1.amazonaws.com/test-jenkins:v1
         ports:
         - containerPort: 3000
