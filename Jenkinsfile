@@ -42,9 +42,11 @@
              
             stage('deploy k8s') {
                 steps{
+                    container('kubectl'){
                       //sh "kubectl apply -f ./nodeapp/deployment.yml --kubeconfig=/var/lib/jenkins/.kube/config"
                       //sh "kubectl apply -f ./nodeapp/service.yml --kubeconfig=/var/lib/jenkins/.kube/config
                         sh "kubectl apply -f ./nodeapp/deploymentservice.yml --kubeconfig=/home/ec2-user/.kube/config"
+                    }
                 }
             }
             
