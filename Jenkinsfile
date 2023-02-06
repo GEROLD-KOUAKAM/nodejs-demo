@@ -42,7 +42,7 @@
              
             stage('deploy k8s') {
                 steps{
-                      sh "kubectl apply -f ./nodeapp/deployment.yml"
+                      //sh "kubectl apply -f ./nodeapp/deployment.yml"
                       sh "kubectl apply -f ./nodeapp/service.yml"
                       //sh "kubectl apply -f ./nodeapp/deploymentservice.yml --kubeconfig=/home/ec2-user/.kube/config"
                       //  sh "aws eks --region us-east-1 update-kubeconfig --name hr-stag-eks-gerold"
