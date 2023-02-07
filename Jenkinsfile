@@ -44,7 +44,7 @@
                 steps{
                       sh "aws eks --region eu-west-3 update-kubeconfig --name hr-stag-eks-gerold"
                       sh "aws sts get-caller-identity"
-                      //sh "kubectl get namespaces"
+                      sh "kubectl get namespaces"
                       //sh "kubectl apply -f ./nodeapp/deployment.yml"
                       //sh "kubectl apply -f ./nodeapp/service.yml"
                       //sh "kubectl apply -f ./nodeapp/deploymentservice.yml --kubeconfig=/home/ec2-user/.kube/config"
