@@ -1,5 +1,6 @@
     pipeline {
         agent any
+        
         environment {
             //DOCKERHUB_CREDENTIALS = credentials('dockerhub') ///
              AWS_ACCOUNT_ID="117166837117"
