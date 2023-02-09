@@ -44,6 +44,7 @@
             stage('deploy k8s') {
                 steps{
                       sh "aws eks --region eu-west-3 update-kubeconfig --name hr-stag-eks-gerold"
+                      sh "kubectl config use-context arn:aws:eks:eu-west-3:117166837117:cluster/hr-stag-eks-gerold"
                       sh "aws sts get-caller-identity"
                       sh "kubectl get namespaces"
                       //sh "kubectl apply -f ./nodeapp/deployment.yml"
