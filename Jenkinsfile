@@ -42,10 +42,6 @@
             
              
             stage('deploy k8s') {
-                environment {
-                AWS_ACCESS_KEY_ID = credentials('jenkins_aws_access_key_id')
-                AWS_SECRET_ACCESS_KEY = credentials('jenkins_aws_secret_access_key')
-            }
                 steps{
                       sh "aws eks --region eu-west-3 update-kubeconfig --name hr-stag-eks-gerold"
                       sh "aws sts get-caller-identity"
