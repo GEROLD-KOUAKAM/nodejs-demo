@@ -5,9 +5,9 @@
             //DOCKERHUB_CREDENTIALS = credentials('dockerhub') ///
              AWS_ACCOUNT_ID="117166837117"
              AWS_DEFAULT_REGION="eu-west-3"
-             IMAGE_REPO_NAME="test-jenkins"
+             IMAGE_REPO_NAME="jenkins-app"
              IMAGE_TAG="v1"
-             REPOSITORY_URI = "117166837117.dkr.ecr.eu-west-3.amazonaws.com/test-jenkins"
+             REPOSITORY_URI = "117166837117.dkr.ecr.eu-west-3.amazonaws.com/jenkins-app"
         }
         stages {
             stage('Build docker images') {
