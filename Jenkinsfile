@@ -2,7 +2,7 @@
         agent any
         
         environment {
-            //DOCKERHUB_CREDENTIALS = credentials('dockerhub') ///
+            //DOCKERHUB_CREDENTIALS = credentials('dockerhub') ////
              AWS_ACCOUNT_ID="117166837117"
              AWS_DEFAULT_REGION="eu-west-3"
              IMAGE_REPO_NAME="jenkins-app"
